@@ -1,0 +1,19 @@
+<div class="list-group-item clearfix">
+  <div class="float-md-left">
+    <h4 class="list-group-item-heading">{{ product.name }}</h4>
+    <div class="buy d-flex justify-content-between align-items-center">
+      <div class="price text-success">
+        <h5 class="mt-4">Rs. {{ product.price }}</h5>
+      </div>
+    </div>
+  </div>
+
+  <span class="float-md-right">
+    <img
+      [src]="product.imagePath"
+      alt="{{ product.name }}"
+      class="img-responsive"
+      style="max-height: 90px"
+    />
+  </span>
+</div>

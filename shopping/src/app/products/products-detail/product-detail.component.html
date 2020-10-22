@@ -1,0 +1,59 @@
+<section class="mb-5">
+  <div class="row">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div id="mdb-lightbox-ui"></div>
+
+      <div class="mdb-lightbox">
+        <div class="row product-gallery mx-1">
+          <div class="col-12 mb-0">
+            <figure class="view overlay rounded z-depth-1 main-img">
+              <img [src]="product.imagePath" class="img-fluid z-depth-1" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h5>{{ product.name }}</h5>
+      <p class="mb-2 text-muted text-uppercase small">{{ product.category }}</p>
+      <p>
+        <span class="mr-1"
+          ><strong>Rs {{ product.price }}</strong></span
+        >
+      </p>
+      <p class="pt-1">{{ product.description }}</p>
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless mb-0">
+          <tbody>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
+              <td>{{ product.model }}</td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
+              <td>{{ product.color }}</td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
+              <td>{{ product.delivery }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+      <div class="table-responsive mb-2"></div>
+      <button
+        type="button"
+        class="btn btn-danger mt-3"
+        [disabled]="!isAuthenticated"
+        (click)="onAddToCart()"
+      >
+        <i class="fa fa-shopping-cart"></i> Add to cart
+      </button>
+      <div class="help-block" *ngIf="!isAuthenticated">
+        Please login, to add item to cart!
+      </div>
+    </div>
+  </div>
+</section>
